@@ -1,4 +1,4 @@
-# from p1 import
+from p1 import unsorted_list_difference
 from pathlib import Path
 
 
@@ -8,3 +8,18 @@ from pathlib import Path
 #     # Structure: Arrange, Act, Assert
 #     # Arrange
 #     line = "1abc2"
+
+
+def test_difference_between_unsorted_lists():
+    list1 = [3, 4, 2, 1, 3, 3]
+    list2 = [4, 3, 5, 3, 9, 3]
+
+    assert unsorted_list_difference(list1, list2) == 11
+
+
+def test_difference_between_unsorted_lists_2():
+    list1 = [0,1]
+    list2 = [3,2]
+
+    assert unsorted_list_difference(list1,list2) == 4
+
