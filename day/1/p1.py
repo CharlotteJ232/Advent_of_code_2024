@@ -9,9 +9,9 @@ def main():
 
 
 def list_difference(list1, list2):
-    intlist1 = map(int, list1)
-    intlist2 = map(int, list2)
-    return sum([y - x for x, y in zip(intlist1, intlist2)])
+    intlists = (map(int, list1), map(int, list2))
+    sortedlists = map(sorted, intlists)
+    return sum([abs(y - x) for x, y in zip(*sortedlists)])
 
 
 def read_lists_from_file(input_path):

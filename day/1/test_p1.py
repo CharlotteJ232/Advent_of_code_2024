@@ -37,3 +37,9 @@ def test_difference_between_lists_where_right_bigger_or_equal_than_left_read_fro
     input_file_path = Path(__file__).parent / "test_input.txt"
 
     assert file_column_difference(input_file_path) == 11
+
+def test_difference_between_lists_where_right_not_always_larger_than_left():
+    list1 = [1,2,5]
+    list2 = [3,2,2]
+
+    assert list_difference(list1,list2) == 3
