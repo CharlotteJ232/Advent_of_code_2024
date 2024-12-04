@@ -1,4 +1,4 @@
-from p1 import unsorted_list_difference
+from p1 import unsorted_list_difference, read_lists_from_file, file_column_difference
 from pathlib import Path
 
 
@@ -22,4 +22,17 @@ def test_difference_between_unsorted_lists_2():
     list2 = [3,2]
 
     assert unsorted_list_difference(list1,list2) == 4
+
+def test_lists_read_from_file():
+    input_file_path = Path(__file__).parent / "test_input.txt"
+
+    assert read_lists_from_file(input_file_path) == (['3', '4', '2', '1', '3', '3'], ['4', '3', '5', '3', '9', '3'])
+
+def test_difference_between_lists_where_right_bigger_or_equal_than_left_read_from_file():
+    input_file_path = Path(__file__).parent / "test_input.txt"
+
+    assert file_column_difference(input_file_path) == 11
+
+
+
 
